@@ -4,6 +4,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Home from "./Home"
 import About from "./About"
 import Contact from "./Contact"
+import LearningUseEffect from "./LearningUseEffect"
 
 function App() {
   //js ko code component ra return ko bich ma lekhna parxa 
@@ -27,6 +28,7 @@ function App() {
         <Route path = "/" element = {<Home />} />
         <Route path = "/about" element = {<About />} />
         <Route path = "/contact" element = {<Contact />} />
+        <Route path = "/learninguseeffect" element = {<LearningUseEffect />} />
         <Route path="/" element = {<h1>This is home page</h1>}/>
         <Route path="/about" element = {<h1>This is about page  </h1>}/>
       </Routes>
