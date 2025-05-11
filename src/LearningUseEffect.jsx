@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 function LearningUseEffect() {
-  //type 1 of useEffect hook(mainly used 80%)
+  //type 1 of useEffect hook (mainly used 80%)
   useEffect(() => {
     console.log("hello")
   }, [])
