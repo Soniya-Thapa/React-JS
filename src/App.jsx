@@ -7,7 +7,7 @@ import Contact from "./Contact"
 import LearningUseEffect from "./LearningUseEffect"
 
 function App() {
-  //js ko code component ra return ko bich ma lekhna parxa 
+  // js ko code component ra return ko bich ma lekhna parxa 
   // let name = "Soniya"
   // let address = "Kaushaltar"
 
