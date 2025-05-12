@@ -171,3 +171,184 @@ button:focus-visible {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//EVERYTHING IN THE SRC FOLDER:
+
+                                App.JSX
+
+
+//yo tala ko function ko jasto lagla tara function haina, yo "component" ho cause yesley jsx return gariraxa ... function bhaneko yo ho : function App(){ console.log("hello")} cause yesley jsx return gareko xaina
+
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Home from "./Home"
+import About from "./About"
+import Contact from "./Contact"
+import LearningUseEffect from "./LearningUseEffect"
+
+function App() {
+  // js ko code component ra return ko bich ma lekhna parxa 
+  // let name = "Soniya"
+  // let address = "Kaushaltar"
+
+  return (
+    //browser ma dekhaunu parne xa bhani return bhitra lekhna parxa
+    //<>:react fragments , dom ma entry hudaina ra js ko code lekhna xa bhani sadhai {} bhitra lekhna
+    // <>
+    //   <h1 style={
+    //     {color : "yellow",backgroundColor : "blue"}
+    //     }>
+    //       Hello World {1 + 1}</h1>
+    //   <h2>Hello {name}!!! Your address is : {address}</h2> 
+    //   <h3>Bye World</h3>
+    // </>
+    <BrowserRouter>
+      <Routes>
+{/* //jasari function lai hello() garera invoke garinxa tyesari nai componentlai <Home /> yesari invoke/call garinxa */}
+        <Route path = "/" element = {<Home />} />
+        <Route path = "/about" element = {<About />} />
+        <Route path = "/contact" element = {<Contact />} />
+        <Route path = "/learninguseeffect" element = {<LearningUseEffect />} />
+        <Route path="/" element = {<h1>This is home page</h1>}/>
+        <Route path="/about" element = {<h1>This is about page  </h1>}/>
+      </Routes>
+    </BrowserRouter>
+  )
+}
+export default App
+
+
+
+                                        About.JSX
+
+
+
+function About(){
+  return(
+    <h1>This is About PAge !!!</h1>
+  )
+}
+export default About
+
+
+
+
+                                        CONTACT.JSX
+
+
+
+function Contact(){
+  return(
+    <div>
+      <h1>This is contact PAge !!!</h1>
+      <h2>Contact : 1234567890</h2>
+      <a href="/about"> Go ToAbout Page</a>
+    </div>
+  )
+}
+
+export default Contact
+
+
+
+                                        Home.JSX
+
+
+
+import { useState } from "react"
+
+function Home() {
+
+  console.log(useState())// yo hameley console ma duitali dekhxam bcoz of newfeature cld strictMode in main.jsx file. so if you dont want to repeat it two times just comment that part and exclude <App /> this part
+
+  //something is a variable
+  let something = useState(100)
+  let myValue = something[0] //something ko 0th index = value
+  let myFunction = something[1] //something ko 1th index = function
+
+  function increaseMyValue() {
+    //return myValue++  => yo garna paidaina ,, hamley hook ko function call garnai parxa
+    myFunction(myValue++)
+  }
+  function decreaseMyValue() {
+    myFunction(myValue--)
+  }
+
+  //Alternate process :
+
+  let [myNumber, setMyNumber] = useState(100) //useState([1,2]) => myNumber ko value array 
+  function increaseMyNumber() {
+    //return myValue++  => yo garna paidaina ,, hamley hook ko function call garnai parxa
+    setMyNumber(myNumber++)
+  }
+  function decreaseMyNumber() {
+    setMyNumber(myNumber--)
+  }
+  return (
+    <>
+      <h1>Welcome !!!</h1>
+      <h1>This is Home Page !!!</h1>
+      <h1>{myValue}</h1>
+      <button onClick={increaseMyValue}>+</button>
+      <button onClick={decreaseMyValue}>-</button>
+      <h1>Alternate Process : {myNumber}</h1>
+      <button onClick={increaseMyNumber}>+</button>
+      <button onClick={decreaseMyNumber}>-</button>
+    </>
+  )
+}
+
+export default Home
+
+
+
+
+                                    LearningUseEffect.JSX
+
+
+
+
+import { useEffect, useState } from "react"
+
+function LearningUseEffect() {
+  //type 1 of useEffect hook (mainly used 80%)
+  useEffect(() => {
+    console.log("hello")
+  }, [])
+
+  //type 2 of useEffect hook (mainly used 19%)
+  const [number, setNumber] = useState(0)
+  const [number1, setNumber1] = useState(0)
+  function increaseNumber() {
+    setNumber(number + 1)
+  }
+
+  function increaseNumber1() {
+    setNumber1(number1 + 1)
+  }
+
+  useEffect(() => {
+    console.log("trigger")
+  }, [number,number1]) //number ko state change huda pani function trigger hunxa
+
+  //type 3 of useEffect hook (mainly used 1%)
+  useEffect(() => {
+    console.log("Type 3")
+  }) // executes everytime when state change and page load
+  
+  return (
+    <>
+      <h1>Learning Use Effect !!!</h1>
+      <h1>{number}</h1>
+      <h1>{number1}</h1>
+      <button onClick={increaseNumber}>+</button>
+      <button onClick={increaseNumber1}>+</button>
+    </>
+  )
+
+}
+export default LearningUseEffect
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
