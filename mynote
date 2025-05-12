@@ -352,3 +352,40 @@ export default LearningUseEffect
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+                              tailwind css:
+
+html: 
+
+
+<!-- // NORMAL WAY -->
+
+<h1 style="color : red">Hello World !!!</h1><br><br>
+
+<h1 class="text-blue-600 bg-yellow-300 p-5 m-10 h-40 w-50 font-bold">Hello World !!!</h1>
+
+<h2 class="bg-blue-500 sm:bg-green-600 md:bg-red-600 lg:bg-orange-400">Soniya </h2>
+
+<button class="bg-red-500 p-2 mt-10 rounded-2xl hover:bg-red-400 hover:text-red-900 active:bg-red-700">Click Me</button><br><br>
+
+<div class="flex space-x-2 justify-center">
+  <div class="box">box 1</div>
+  <div class="box">box 2</div>
+  <div class="box">box 3</div>
+  <div class="box">box 4</div>
+</div>
+
+
+  
+                    css:
+
+
+
+@import "tailwindcss";
+
+@layer components{
+  .box{
+    @apply h-20 w-20 bg-green-500
+  }
+}
