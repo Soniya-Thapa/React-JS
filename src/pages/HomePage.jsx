@@ -1,3 +1,5 @@
+import Button from "../components/Button"
+
 function HomePage() {
   return (
     <>
@@ -54,7 +56,7 @@ function HomePage() {
                     class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
                     href="#"
                   >
-                    create
+                    +create
                   </a>
                 </div>
 
@@ -63,6 +65,8 @@ function HomePage() {
           </div>
         </div>
       </header>
+    <Button />
+
     </>
   )
 }
