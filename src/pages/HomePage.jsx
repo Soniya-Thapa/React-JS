@@ -65,7 +65,9 @@ function HomePage() {
           </div>
         </div>
       </header>
-    <Button />
+    <Button title = "Login"/>
+    <Button title = "Create"/>
+    <Button title = "Register"/>
 
     </>
   )

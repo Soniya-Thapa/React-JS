@@ -1,7 +1,7 @@
-function Button(){
+function Button(props){
   return(
     <>
-    <button className="bg-green-700">Login</button>
+    <button className="bg-green-700">{props.title}</button>
     </>
   )
 }
