@@ -1,12 +1,17 @@
 import Button from "../components/Button"
+
+import { useEffect } from "react"
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 import axios from "axios"
 function HomePage() {
   //backend integration in frontend:
   const fetchBooks = async()=>{
-    const response = await axios.get("http://localhost:4000/books")
+    const response = await axios.get("http://localhost:3000/books")
   }
+  useEffect(()=>{
+    fetchBooks()
+  },[])
   return (
     <>
       <Navbar />
