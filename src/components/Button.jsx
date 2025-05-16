@@ -1,7 +1,9 @@
-function Button(props){
+//if Button(props) used then props.title is written
+
+function Button({title}){
   return(
     <>
-    <button className="bg-green-700">{props.title}</button>
+    <button className="bg-green-700">{title}</button>
     </>
   )
 }
