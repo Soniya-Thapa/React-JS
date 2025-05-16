@@ -1,8 +1,12 @@
 import Button from "../components/Button"
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
-
+import axios from "axios"
 function HomePage() {
+  //backend integration in frontend:
+  const fetchBooks = async()=>{
+    const response = await axios.get("http://localhost:4000/books")
+  }
   return (
     <>
       <Navbar />
