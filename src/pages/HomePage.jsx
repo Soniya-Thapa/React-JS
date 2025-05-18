@@ -7,7 +7,7 @@ import axios from "axios"
 function HomePage() {
   //backend integration in frontend:
   const fetchBooks = async()=>{
-    const response = await axios.get("http://localhost:3000/books")
+    const res = await axios.get("http://localhost:3000/books")
   }
   useEffect(()=>{
     fetchBooks()
